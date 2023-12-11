@@ -6,7 +6,7 @@ import 'package:flutter_news/src/features/presentation/widgets/components/catego
 import 'package:flutter_news/src/features/presentation/widgets/components/headline.dart';
 import 'package:flutter_news/src/features/presentation/widgets/components/news_card_listview.dart';
 import 'package:flutter_news/src/features/presentation/widgets/components/news_list.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_news/src/features/presentation/widgets/desktop/components/news_list_desktop.dart';
 
 class HomeDesktop extends StatelessWidget {
   const HomeDesktop({super.key});
@@ -16,7 +16,7 @@ class HomeDesktop extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          toolbarHeight: 90.h,
+          toolbarHeight: 70,
           title: Center(
             child: Text(
               'Flutter News',
@@ -38,13 +38,19 @@ class HomeDesktop extends StatelessWidget {
               return const Center(
                 child: Text('Something went wrong!'),
               );
-            } else {
+            }
+            else if(state is NewsTestStatic){
+              return const Center(
+                child: Text('Test'),
+              );
+            }
+            else {
               return SingleChildScrollView(
                 child: Column(
                   children: [
                     const CategoryListview(),
                     const HeadLine(title: 'Breaking News!'),
-                    NewsList(news: state.props.first as NewsEntity),
+                    NewsListDesktop(news: state.props.first as NewsEntity),
                     const HeadLine(title: 'Trending News!'),
                     NewsCardListview(news: state.props.first as NewsEntity),
                   ],

@@ -1,72 +1,78 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class NewsCard extends StatelessWidget {
   final String? title;
   final String? description;
   final String? image;
   final String? url;
-  const NewsCard({super.key, this.title, this.image, this.url, this.description});
+
+  const NewsCard({super.key, required this.title, required this.description, required this.image, required this.url});
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 180.h,
+      height: 180,
       child: Card(
-        margin: EdgeInsets.symmetric(vertical: 20.h, horizontal: 15.w),
+        margin: const EdgeInsets.symmetric(vertical: 20, horizontal: 15),
         color: Theme.of(context).cardColor,
         elevation: 5,
-        shape: RoundedRectangleBorder(
+        shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(
-            Radius.circular(10.r),
+            Radius.circular(10),
           ),
         ),
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
-          child: Row(
-            children: [
-              Flexible(
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(10.r),
-                  child: Image(
-                    image: NetworkImage(image ?? 'https://picsum.photos/500/500'),
+        child: InkWell(
+          onTap: () async {
+            if (!await launchUrl(Uri.parse(url ?? ''))) {
+              print('Could not launch $url');
+            }
+          },
+          borderRadius: const BorderRadius.all(
+            Radius.circular(10),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+            child: Row(
+              children: [
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(10),
+                  child: Image.network(
+                    image ?? 'https://picsum.photos/500/500',
+                    fit: BoxFit.cover,
+                    width: 120,
+                    height: 120,
                   ),
                 ),
-              ),
-              Gap(10.w),
-              Expanded(
-                flex: 10,
-                child: Padding(
-                  padding: EdgeInsets.symmetric(vertical: 10.h),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Flexible(
-                        child: Text(
+                const Gap(10),
+                Expanded(
+                  child: SizedBox(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
                           title ?? 'No Title',
-                          style: Theme.of(context).textTheme.bodyLarge,
+                          style: Theme.of(context).textTheme.bodyLarge?.copyWith(),
                           overflow: TextOverflow.ellipsis,
                           maxLines: 2, // Adjust as needed
                           textAlign: TextAlign.justify,
                         ),
-                      ),
-                      Gap(10.h),
-                      Flexible(
-                        child: Text(
+                        const Gap(10),
+                        Text(
                           description ?? 'No Description',
-                          style: Theme.of(context).textTheme.bodyMedium,
+                          style: Theme.of(context).textTheme.bodyMedium?.copyWith(),
                           overflow: TextOverflow.ellipsis,
-                          maxLines: 1, // Adjust as needed
+                          maxLines: 2, // Adjust as needed
                           textAlign: TextAlign.justify,
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

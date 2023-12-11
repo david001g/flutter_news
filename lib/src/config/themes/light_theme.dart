@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 Color primary = Colors.white;
@@ -28,110 +27,70 @@ ThemeData lightTheme() {
       background: primaryBackground,
       tertiary: tertiary,
       error: error,
+
     ),
     scaffoldBackgroundColor: primaryBackground,
     fontFamily: GoogleFonts.plusJakartaSans().fontFamily,
+    useMaterial3: true,
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+        backgroundColor: tertiary,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
+      ),
+    ),
+
+    /// Text Theme
     textTheme: TextTheme(
-      bodySmall: TextStyle(
-        fontSize: 8.sp,
-        color: primaryText,
-        fontWeight: FontWeight.bold,
-      ),
-
-      /// Text Style for the news card snippet
-      bodyMedium: TextStyle(
-        fontSize: 10.sp,
-        color: secondaryText,
-        fontWeight: FontWeight.bold,
-      ),
-
-      /// Text Style for the news card title
-      bodyLarge: TextStyle(
-        fontSize: 16.sp,
-        color: primaryText,
-        fontWeight: FontWeight.bold,
-      ),
-
       /// Text Style for AppBar Title
       titleLarge: TextStyle(
-        fontSize: 36.sp,
+        fontSize: 30,
         color: tertiary,
         fontWeight: FontWeight.bold,
       ),
 
       /// Text Style for the headline
       titleMedium: TextStyle(
-        fontSize: 28.sp,
+        fontSize: 24,
         color: primaryText,
         fontWeight: FontWeight.bold,
       ),
       titleSmall: TextStyle(
-        fontSize: 14.sp,
+        fontSize: 20,
+        color: primaryText,
+        fontWeight: FontWeight.bold,
+      ),
+
+      /// Text Style for ...
+      bodySmall: TextStyle(
+        fontSize: 12,
+        color: primaryText,
+        fontWeight: FontWeight.bold,
+      ),
+
+      /// Text Style for the news card snippet
+      bodyMedium: TextStyle(
+        fontSize: 14,
+        color: secondaryText,
+        fontWeight: FontWeight.bold,
+      ),
+
+      /// Text Style for the news card title
+      bodyLarge: TextStyle(
+        fontSize: 16,
         color: primaryText,
         fontWeight: FontWeight.bold,
       ),
 
       /// Text Style for the "View All"
       labelMedium: TextStyle(
-        fontSize: 20.sp,
+        fontSize: 18,
         color: tertiary,
         fontWeight: FontWeight.normal,
         decoration: TextDecoration.underline,
       ),
     ),
-    iconTheme: IconThemeData(
-      color: alternate,
-    ),
-    buttonTheme: ButtonThemeData(
-      buttonColor: secondary,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10.r),
-      ),
-    ),
-    elevatedButtonTheme: ElevatedButtonThemeData(
-      style: ButtonStyle(
-        fixedSize: MaterialStateProperty.all(Size(150.w, 50.h)),
-        backgroundColor: MaterialStateProperty.all(secondary),
-        shape: MaterialStateProperty.all(
-          RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10.r),
-          ),
-        ),
-      ),
-    ),
     cardColor: secondaryBackground,
   );
-}
-
-class MyTextTheme extends TextTheme {
-  final TextStyle bodyLargeContrast;
-  @override
-  final TextStyle titleLarge;
-  @override
-  final TextStyle titleMedium;
-  @override
-  final TextStyle labelMedium;
-  @override
-  final TextStyle bodyLarge;
-  @override
-  final TextStyle bodyMedium;
-  @override
-  final TextStyle bodySmall;
-
-  const MyTextTheme(
-      {required this.bodyLargeContrast,
-      required this.titleLarge,
-      required this.titleMedium,
-      required this.labelMedium,
-      required this.bodyLarge,
-      required this.bodyMedium,
-      required this.bodySmall})
-      : super(
-          titleLarge: titleLarge,
-          titleMedium: titleMedium,
-          labelMedium: labelMedium,
-          bodyLarge: bodyLarge,
-          bodyMedium: bodyMedium,
-          bodySmall: bodySmall,
-        );
 }

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HeadLine extends StatelessWidget {
   final String title;
@@ -11,7 +10,7 @@ class HeadLine extends StatelessWidget {
     return Row(
       children: [
         Padding(
-          padding: EdgeInsets.only(left: 15.0.w),
+          padding: const EdgeInsets.only(left: 15.0),
           child: Text(
             title,
             style: Theme.of(context).textTheme.titleMedium,
@@ -19,7 +18,7 @@ class HeadLine extends StatelessWidget {
         ),
         const Spacer(),
         Padding(
-          padding: EdgeInsets.only(right: 15.0.w),
+          padding: const EdgeInsets.only(right: 15.0),
           child: MouseRegion(
             cursor: SystemMouseCursors.click,
             child: GestureDetector(

@@ -11,6 +11,8 @@ class NewsEmpty extends NewsState {}
 
 class NewsLoading extends NewsState {}
 
+class NewsTestStatic extends NewsState {}
+
 class NewsLoaded extends NewsState {
   final NewsEntity news;
 

@@ -1,4 +1,3 @@
-
 class Urls {
   static const String baseUrl = 'https://newsapi.org/v2/top-headlines';
   static const String baseUrlEverything = 'https://newsapi.org/v2/everything';
@@ -93,3 +92,5 @@ class CategoryImages {
   static const String travel = 'assets/categories/travel.jpg';
   static const String politics = 'assets/categories/politics.jpg';
 }
+
+
