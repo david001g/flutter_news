@@ -1,24 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_news/src/features/domain/entities/news_entity.dart';
-import 'package:flutter_news/src/features/presentation/bloc/category_cubit.dart';
+import 'package:flutter_news/src/features/presentation/bloc/news_cubit.dart';
 import 'package:flutter_news/src/features/presentation/widgets/mobile/components/category_article_list.dart';
 import 'package:gap/gap.dart';
 
-class CategoryMobile extends StatelessWidget {
-  final String categoryName;
+class TopNewsMobile extends StatelessWidget {
 
-  const CategoryMobile({super.key, required this.categoryName});
+  const TopNewsMobile({super.key});
 
   @override
   Widget build(BuildContext context) {
-    context.read<CategoryCubit>().loadNewsByCategory(categoryName);
     return Scaffold(
       appBar: AppBar(
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(categoryName, style: Theme.of(context).textTheme.titleLarge),
+            Text('Flutter',
+                style: Theme.of(context)
+                    .textTheme
+                    .titleLarge
+                    ?.copyWith(color: const Color(0xff14181b), fontWeight: FontWeight.normal)),
+            Text(
+              'News',
+              style: Theme.of(context).textTheme.titleLarge,
+            ),
           ],
         ),
         centerTitle: true,
@@ -27,17 +33,17 @@ class CategoryMobile extends StatelessWidget {
         ],
       ),
       body: SafeArea(
-        child: BlocBuilder<CategoryCubit, CategoryState>(
-          builder: (BuildContext context, CategoryState state) {
+        child: BlocBuilder<NewsCubit, NewsState>(
+          builder: (BuildContext context, NewsState state) {
             switch (state.runtimeType) {
-              case CategoryEmpty:
+              case NewsEmpty:
                 return const Center(child: Text('No posts'));
-              case CategoryLoading:
+              case NewsLoading:
                 return const Center(child: CircularProgressIndicator());
-              case CategoryLoaded:
+              case NewsLoaded:
                 var news = state.props[0] as NewsEntity;
                 return CategoryArticleList(news: news);
-              case CategoryError:
+              case NewsError:
                 return Center(
                     child: ElevatedButton(onPressed: () {}, child: const Text('Refresh'))); // TODO: 2. Add a button to retry
               default:

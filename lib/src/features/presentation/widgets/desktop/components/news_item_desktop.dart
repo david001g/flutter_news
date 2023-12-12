@@ -1,4 +1,7 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_news/src/config/routes/router.dart';
+import 'package:go_router/go_router.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class NewsItemDesktop extends StatelessWidget {
@@ -13,7 +16,11 @@ class NewsItemDesktop extends StatelessWidget {
     return InkWell(
       borderRadius: BorderRadius.circular(10),
       onTap: () async {
-        if (!await launchUrl(Uri.parse(url ?? ''))) {
+        if (url == null) {
+          context.pushNamed(AppRoutes.error.name);
+        } else if (defaultTargetPlatform == TargetPlatform.android || defaultTargetPlatform == TargetPlatform.iOS) {
+          context.pushNamed(AppRoutes.article.name, pathParameters: {'articleUrl': url!});
+        } else if (!await launchUrl(Uri.parse(url ?? ''))) {
           print('Could not launch $url');
         }
       },

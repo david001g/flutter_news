@@ -14,10 +14,6 @@ class NewsCubit extends Cubit<NewsState> {
 
   NewsCubit(this.getNewsByCategory, this.getNewsByCountryAndCategory, this.getNews) : super(NewsEmpty());
 
-  void loadTestStatic() {
-    emit(NewsTestStatic());
-  }
-
   void loadNews() async {
     emit(NewsLoading());
     final result = await getNews.execute();

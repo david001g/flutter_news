@@ -9,11 +9,14 @@ import 'package:flutter_news/src/features/presentation/bloc/news_cubit.dart';
 import 'package:get_it/get_it.dart';
 import 'package:http/http.dart' as http;
 
+import 'src/features/presentation/bloc/category_cubit.dart';
+
 final locator = GetIt.instance;
 
 void setupLocator() {
   /// cubit
   locator.registerFactory(() => NewsCubit(locator(), locator(), locator()));
+  locator.registerFactory(() => CategoryCubit(locator()));
 
   /// use cases
   locator.registerLazySingleton(() => GetNews(locator()));

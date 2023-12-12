@@ -1,5 +1,9 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_news/src/config/routes/router.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
+import 'package:responsive_framework/responsive_breakpoints.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class NewsCard extends StatelessWidget {
@@ -12,10 +16,20 @@ class NewsCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double height = 180;
+    double imageWidth = 140;
+    double imageHeight = 140;
+
+    if(ResponsiveBreakpoints.of(context).isMobile){
+      height = 160;
+      imageWidth = 120;
+      imageHeight = 120;
+    }
+
     return SizedBox(
-      height: 180,
+      height: height,
       child: Card(
-        margin: const EdgeInsets.symmetric(vertical: 20, horizontal: 15),
+        margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
         color: Theme.of(context).cardColor,
         elevation: 5,
         shape: const RoundedRectangleBorder(
@@ -25,7 +39,11 @@ class NewsCard extends StatelessWidget {
         ),
         child: InkWell(
           onTap: () async {
-            if (!await launchUrl(Uri.parse(url ?? ''))) {
+            if (url == null) {
+              context.pushNamed(AppRoutes.error.name);
+            } else if (defaultTargetPlatform == TargetPlatform.android || defaultTargetPlatform == TargetPlatform.iOS) {
+              context.pushNamed(AppRoutes.article.name, pathParameters: {'articleUrl': url!});
+            } else if (!await launchUrl(Uri.parse(url ?? ''))) {
               print('Could not launch $url');
             }
           },
@@ -41,8 +59,8 @@ class NewsCard extends StatelessWidget {
                   child: Image.network(
                     image ?? 'https://picsum.photos/500/500',
                     fit: BoxFit.cover,
-                    width: 120,
-                    height: 120,
+                    width: imageWidth,
+                    height: imageHeight,
                   ),
                 ),
                 const Gap(10),

@@ -20,6 +20,12 @@ Color info = const Color(0xff2196f3);
 
 ThemeData lightTheme() {
   return ThemeData(
+    appBarTheme: AppBarTheme(
+      toolbarHeight: 70,
+      backgroundColor: primary,
+      elevation: 5,
+      iconTheme: IconThemeData(color: primaryText),
+    ),
     primaryColor: primary,
     colorScheme: ColorScheme.light(
       primary: primary,
@@ -27,7 +33,6 @@ ThemeData lightTheme() {
       background: primaryBackground,
       tertiary: tertiary,
       error: error,
-
     ),
     scaffoldBackgroundColor: primaryBackground,
     fontFamily: GoogleFonts.plusJakartaSans().fontFamily,
@@ -89,6 +94,7 @@ ThemeData lightTheme() {
         color: tertiary,
         fontWeight: FontWeight.normal,
         decoration: TextDecoration.underline,
+        decorationColor: tertiary,
       ),
     ),
     cardColor: secondaryBackground,

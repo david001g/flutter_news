@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_news/src/config/routes/router.dart';
+import 'package:go_router/go_router.dart';
 
 class HeadLine extends StatelessWidget {
   final String title;
@@ -22,7 +24,7 @@ class HeadLine extends StatelessWidget {
           child: MouseRegion(
             cursor: SystemMouseCursors.click,
             child: GestureDetector(
-              onTap: () {},
+              onTap: () => context.pushNamed(AppRoutes.topNews.name),
               child: Text(
                 'View All',
                 style: Theme.of(context).textTheme.labelMedium,
