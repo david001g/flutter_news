@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_news/src/common/network_image.dart';
 import 'package:flutter_news/src/config/routes/router.dart';
 import 'package:go_router/go_router.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -36,16 +37,13 @@ class CategoryArticle extends StatelessWidget {
         ),
         child: Column(
           children: [
-            ClipRRect(
+            CustomNetworkImage(
+              image: image,
+              width: MediaQuery.of(context).size.width,
+              height: 200,
               borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(10),
                 topRight: Radius.circular(10),
-              ),
-              child: Image.network(
-                image ?? 'https://picsum.photos/500/500',
-                width: MediaQuery.of(context).size.width,
-                height: 200,
-                fit: BoxFit.cover,
               ),
             ),
             ListTile(

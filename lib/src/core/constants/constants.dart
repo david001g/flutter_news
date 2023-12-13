@@ -93,4 +93,8 @@ class CategoryImages {
   static const String politics = 'assets/categories/politics.jpg';
 }
 
+class AssetImages{
+  static const String noImage = 'assets/no_image.png';
+}
+
 

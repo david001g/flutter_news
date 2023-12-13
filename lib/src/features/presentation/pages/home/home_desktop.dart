@@ -45,8 +45,12 @@ class HomeDesktop extends StatelessWidget {
                 ),
               );
             } else if (state is NewsError) {
-              return const Center(
-                child: Text('Something went wrong!'),
+              return Center(
+                child: ElevatedButton(
+                    onPressed: () {
+                      context.read<NewsCubit>().loadNews();
+                    },
+                    child: const Text('Refresh')), // TODO: 2. Add a button to retry
               );
             } else {
               return SingleChildScrollView(

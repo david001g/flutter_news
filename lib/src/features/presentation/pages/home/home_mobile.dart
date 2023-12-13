@@ -44,7 +44,9 @@ class HomeMobile extends StatelessWidget {
               );
             } else if (state is NewsError) {
               return Center(
-                child: ElevatedButton(onPressed: () {}, child: const Text('Refresh')), // TODO: 2. Add a button to retry
+                child: ElevatedButton(onPressed: () {
+                  context.read<NewsCubit>().loadNews();
+                }, child: const Text('Refresh')), // TODO: 2. Add a button to retry
               );
             }else {
               return SingleChildScrollView(

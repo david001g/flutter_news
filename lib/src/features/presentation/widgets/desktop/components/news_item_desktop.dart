@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_news/src/common/network_image.dart';
 import 'package:flutter_news/src/config/routes/router.dart';
 import 'package:go_router/go_router.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -27,15 +28,7 @@ class NewsItemDesktop extends StatelessWidget {
       child: Stack(
         alignment: Alignment.bottomCenter,
         children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(10),
-            child: Image.network(
-              image ?? 'https://picsum.photos/500/500',
-              fit: BoxFit.cover,
-              width: 290,
-              height: 250,
-            ),
-          ),
+          CustomNetworkImage(width: 250, height: 290, image: image),
           Container(
             height: 60,
             width: 290,

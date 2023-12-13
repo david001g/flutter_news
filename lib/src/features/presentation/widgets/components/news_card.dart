@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_news/src/common/network_image.dart';
 import 'package:flutter_news/src/config/routes/router.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
@@ -54,14 +55,10 @@ class NewsCard extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
             child: Row(
               children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(10),
-                  child: Image.network(
-                    image ?? 'https://picsum.photos/500/500',
-                    fit: BoxFit.cover,
-                    width: imageWidth,
-                    height: imageHeight,
-                  ),
+                CustomNetworkImage(
+                  image: image,
+                  width: imageWidth,
+                  height: imageHeight,
                 ),
                 const Gap(10),
                 Expanded(

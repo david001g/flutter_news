@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_news/src/common/network_image.dart';
 import 'package:flutter_news/src/config/routes/router.dart';
 import 'package:go_router/go_router.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -19,25 +20,16 @@ class NewsItemMobile extends StatelessWidget {
         alignment: Alignment.bottomCenter,
         children: [
           InkWell(
-            onTap: () async {
-              if (url == null) {
-                context.pushNamed(AppRoutes.error.name);
-              } else if (defaultTargetPlatform == TargetPlatform.android || defaultTargetPlatform == TargetPlatform.iOS) {
-                context.pushNamed(AppRoutes.article.name, pathParameters: {'articleUrl': url!});
-              } else if (!await launchUrl(Uri.parse(url ?? ''))) {
-                print('Could not launch $url');
-              }
-            },
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(10),
-              child: Image.network(
-                image ?? 'https://picsum.photos/500/500',
-                fit: BoxFit.cover,
-                height: 200,
-                width: MediaQuery.of(context).size.width,
-              ),
-            ),
-          ),
+              onTap: () async {
+                if (url == null) {
+                  context.pushNamed(AppRoutes.error.name);
+                } else if (defaultTargetPlatform == TargetPlatform.android || defaultTargetPlatform == TargetPlatform.iOS) {
+                  context.pushNamed(AppRoutes.article.name, pathParameters: {'articleUrl': url!});
+                } else if (!await launchUrl(Uri.parse(url ?? ''))) {
+                  print('Could not launch $url');
+                }
+              },
+              child: CustomNetworkImage(width: MediaQuery.of(context).size.width, height: 200, image: image)),
           Container(
             height: 80,
             decoration: BoxDecoration(
