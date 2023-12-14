@@ -18,7 +18,14 @@ Welcome to FlutterNews, a cross-platform application built with Flutter that pro
 
 - **GoRouter for Routing:** The navigation in FlutterNews is handled by GoRouter, simplifying the process of routing and enabling smooth transitions between screens.
 
+## Video Showcase (Mobile Platform)
 
-![category_frame](https://github.com/david001g/flutter_news/assets/94360199/abc8f557-1094-4fae-9f3c-e0f50cbafc3b)
-![article_frame](https://github.com/david001g/flutter_news/assets/94360199/b2d9dd34-14e4-4ce9-ad68-5e7f0a235f27)
-![Screenshot_20231213_091820](https://github.com/david001g/flutter_news/assets/94360199/e9b08d35-43db-4c1c-808c-ec1af2c86fac)
+Watch the video to see FlutterNews in action on mobile platforms.
+[mobile_vid.webm](https://github.com/david001g/flutter_news/assets/94360199/06017682-5456-4905-90dd-12c9de0ef3fe)
+
+## Video Showcase (Web Platform)
+
+Watch the video to see FlutterNews in action on web.
+https://github.com/david001g/flutter_news/assets/94360199/b345f8fb-f859-42c3-8217-2858c14f3224
+
+
