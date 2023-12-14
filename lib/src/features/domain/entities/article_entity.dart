@@ -4,17 +4,15 @@ class ArticleEntity extends Equatable {
   final String? title;
   final String? description;
   final String? url;
-  final String? urlToImage;
+  final String? image;
   final String? publishedAt;
-  final String? content;
 
   const ArticleEntity({
     required this.title,
     required this.description,
     required this.url,
-    required this.urlToImage,
+    required this.image,
     required this.publishedAt,
-    required this.content,
   });
 
   @override
@@ -22,13 +20,12 @@ class ArticleEntity extends Equatable {
         title,
         description,
         url,
-        urlToImage,
+        image,
         publishedAt,
-        content,
       ];
 
   @override
   String toString() {
-    return 'ArticleEntity{title: $title, description: $description, url: $url, urlToImage: $urlToImage, publishedAt: $publishedAt, content: $content}';
+    return 'ArticleEntity{title: $title, description: $description, url: $url, urlToImage: $image, publishedAt: $publishedAt}';
   }
 }

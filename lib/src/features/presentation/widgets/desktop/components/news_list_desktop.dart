@@ -16,17 +16,17 @@ class NewsListDesktop extends StatelessWidget {
       child: SizedBox(
         height: 200,
         child: ListView(scrollDirection: Axis.horizontal, shrinkWrap: true, children: [
-          NewsItemDesktop(title: news.articles[0].title, image: news.articles[0].urlToImage, url: news.articles[0].url),
+          NewsItemDesktop(title: news.articles[0].title, image: news.articles[0].image, url: news.articles[0].url),
           const Gap(10),
-          NewsItemDesktop(title: news.articles[1].title, image: news.articles[1].urlToImage, url: news.articles[1].url),
+          NewsItemDesktop(title: news.articles[1].title, image: news.articles[1].image, url: news.articles[1].url),
           const Gap(10),
-          NewsItemDesktop(title: news.articles[2].title, image: news.articles[2].urlToImage, url: news.articles[2].url),
+          NewsItemDesktop(title: news.articles[2].title, image: news.articles[2].image, url: news.articles[2].url),
           const Gap(10),
-          NewsItemDesktop(title: news.articles[3].title, image: news.articles[3].urlToImage, url: news.articles[3].url),
+          NewsItemDesktop(title: news.articles[3].title, image: news.articles[3].image, url: news.articles[3].url),
           const Gap(10),
-          NewsItemDesktop(title: news.articles[4].title, image: news.articles[4].urlToImage, url: news.articles[4].url),
+          NewsItemDesktop(title: news.articles[4].title, image: news.articles[4].image, url: news.articles[4].url),
           const Gap(10),
-          NewsItemDesktop(title: news.articles[5].title, image: news.articles[5].urlToImage, url: news.articles[5].url),
+          NewsItemDesktop(title: news.articles[5].title, image: news.articles[5].image, url: news.articles[5].url),
         ]),
       ),
     );

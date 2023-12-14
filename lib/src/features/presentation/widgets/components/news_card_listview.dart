@@ -9,7 +9,7 @@ class NewsCardListview extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: news.articles.reversed.map((e) => NewsCard(title: e.title, image: e.urlToImage, url: e.url, description:  e.description)).toList(),
+      children: news.articles.reversed.map((e) => NewsCard(title: e.title, image: e.image, url: e.url, description:  e.description)).toList(),
     );
   }
 }

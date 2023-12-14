@@ -19,7 +19,7 @@ class CategoryArticleList extends StatelessWidget {
               (article) => CategoryArticle(
                 title: article.title,
                 description: article.description,
-                image: article.urlToImage,
+                image: article.image,
                 url: article.url,
               ),
             )

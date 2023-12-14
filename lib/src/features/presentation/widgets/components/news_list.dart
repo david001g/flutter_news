@@ -12,12 +12,12 @@ class NewsList extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
       child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-        NewsItemMobile(title: news.articles[0].title, image: news.articles[0].urlToImage, url: news.articles[0].url),
-        NewsItemMobile(title: news.articles[1].title, image: news.articles[1].urlToImage, url: news.articles[1].url),
-        NewsItemMobile(title: news.articles[2].title, image: news.articles[2].urlToImage, url: news.articles[2].url),
-        NewsItemMobile(title: news.articles[3].title, image: news.articles[3].urlToImage, url: news.articles[3].url),
-        NewsItemMobile(title: news.articles[4].title, image: news.articles[4].urlToImage, url: news.articles[4].url),
-        NewsItemMobile(title: news.articles[5].title, image: news.articles[5].urlToImage, url: news.articles[5].url),
+        NewsItemMobile(title: news.articles[0].title, image: news.articles[0].image, url: news.articles[0].url),
+        NewsItemMobile(title: news.articles[1].title, image: news.articles[1].image, url: news.articles[1].url),
+        NewsItemMobile(title: news.articles[2].title, image: news.articles[2].image, url: news.articles[2].url),
+        NewsItemMobile(title: news.articles[3].title, image: news.articles[3].image, url: news.articles[3].url),
+        NewsItemMobile(title: news.articles[4].title, image: news.articles[4].image, url: news.articles[4].url),
+        NewsItemMobile(title: news.articles[5].title, image: news.articles[5].image, url: news.articles[5].url),
       ]),
     );
   }

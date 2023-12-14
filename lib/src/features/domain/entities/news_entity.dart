@@ -7,9 +7,9 @@ class NewsEntity extends Equatable{
   final List<ArticleEntity> articles;
 
   const NewsEntity({
+    required this.articles,
     required this.status,
     required this.totalResults,
-    required this.articles,
   });
 
   @override

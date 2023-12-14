@@ -20,7 +20,7 @@ class CarouselMobile extends StatelessWidget {
             .map(
               (e) => NewsItemMobile(
                 title: e.title,
-                image: e.urlToImage,
+                image: e.image,
                 url: e.url,
               ),
             )

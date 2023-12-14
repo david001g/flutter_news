@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_news/src/config/routes/router.dart';
-import 'package:flutter_news/src/features/presentation/bloc/news_cubit.dart';
-import 'package:go_router/go_router.dart';
 
 class CategoryItem extends StatelessWidget {
   final String title;

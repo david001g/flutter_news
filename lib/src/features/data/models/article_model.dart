@@ -5,26 +5,23 @@ class ArticleModel extends ArticleEntity {
     required String? title,
     required String? description,
     required String? url,
-    required String? urlToImage,
+    required String? image,
     required String? publishedAt,
-    required String? content,
   }) : super(
           title: title,
           description: description,
           url: url,
-          urlToImage: urlToImage,
+          image: image,
           publishedAt: publishedAt,
-          content: content,
         );
 
   factory ArticleModel.fromJson(Map<String, dynamic> json) {
     return ArticleModel(
       title: json['title'] as String?,
       description: json['description'] as String?,
-      url: json['url'] as String?,
-      urlToImage: json['urlToImage'] as String?,
-      publishedAt: json['publishedAt'] as String?,
-      content: json['content'] as String?,
+      url: json['link'] as String?,
+      image: json['image_url'] as String?,
+      publishedAt: json['pubDate'] as String?,
     );
   }
 
@@ -33,9 +30,8 @@ class ArticleModel extends ArticleEntity {
       'title': title,
       'description': description,
       'url': url,
-      'urlToImage': urlToImage,
+      'urlToImage': image,
       'publishedAt': publishedAt,
-      'content': content,
     };
   }
 
@@ -44,9 +40,8 @@ class ArticleModel extends ArticleEntity {
       title: title,
       description: description,
       url: url,
-      urlToImage: urlToImage,
+      image: image,
       publishedAt: publishedAt,
-      content: content,
     );
   }
 }

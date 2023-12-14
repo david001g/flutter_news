@@ -1,14 +1,13 @@
 class Urls {
-  static const String baseUrl = 'https://newsapi.org/v2/top-headlines';
-  static const String baseUrlEverything = 'https://newsapi.org/v2/everything';
-  static const String apiKey = '9407d35bad5e4377b6b9c11ff18963b7';
+  static const String baseUrl = 'https://newsdata.io/api/1/news';
+  static const String apiKey = 'pub_34702fa0b47493023de48136aa44fd49d33f2';
 
-  static String getUsNews() => '$baseUrlEverything?q=trending&language=en&apiKey=$apiKey';
+  static String getUsNews() => '$baseUrl?apikey=$apiKey&language=en';
 
-  static String getUsNewsByCategory(String category) => '$baseUrl?country=us&category=$category&apiKey=$apiKey';
+  static String getUsNewsByCategory(String category) => '$baseUrl?apikey=$apiKey&language=en&category=$category';
 
   static String getNewsByCountryAndCategory(String country, String category) =>
-      '$baseUrl?country=$country&category=$category&apiKey=$apiKey';
+      '$baseUrl?apikey=$apiKey&language=en&country=$country&category=$category';
 }
 
 class ArticleCategory {
@@ -93,8 +92,6 @@ class CategoryImages {
   static const String politics = 'assets/categories/politics.jpg';
 }
 
-class AssetImages{
+class AssetImages {
   static const String noImage = 'assets/no_image.png';
 }
-
-

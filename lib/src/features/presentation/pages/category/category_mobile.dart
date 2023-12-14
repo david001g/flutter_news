@@ -12,7 +12,7 @@ class CategoryMobile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    context.read<CategoryCubit>().loadNewsByCategory(categoryName);
+    context.read<CategoryCubit>().loadNewsByCategory(categoryName.toLowerCase());
     return Scaffold(
       appBar: AppBar(
         title: Row(
