@@ -6,8 +6,6 @@ Welcome to FlutterNews, a cross-platform application built with Flutter that pro
 
 ## Features
 
-- **Cross-Platform Compatibility:** FlutterNews is designed to run smoothly on both web and mobile platforms, making it accessible to a broader audience.
-
 - **Clean Architecture:** The app is structured with clean architecture principles, promoting code organization, separation of concerns, and ease of maintenance.
 
 - **REST API Integration:** FlutterNews fetches news data from [NewsAPI](https://newsapi.org/) to keep users updated with the latest news and information.
@@ -19,3 +17,8 @@ Welcome to FlutterNews, a cross-platform application built with Flutter that pro
 - **Dependency Injection with Get_it:** Get_it is used for dependency injection, providing a clean and efficient way to manage and access dependencies throughout the app.
 
 - **GoRouter for Routing:** The navigation in FlutterNews is handled by GoRouter, simplifying the process of routing and enabling smooth transitions between screens.
+
+
+![category_frame](https://github.com/david001g/flutter_news/assets/94360199/abc8f557-1094-4fae-9f3c-e0f50cbafc3b)
+![article_frame](https://github.com/david001g/flutter_news/assets/94360199/b2d9dd34-14e4-4ce9-ad68-5e7f0a235f27)
+![Screenshot_20231213_091820](https://github.com/david001g/flutter_news/assets/94360199/e9b08d35-43db-4c1c-808c-ec1af2c86fac)
