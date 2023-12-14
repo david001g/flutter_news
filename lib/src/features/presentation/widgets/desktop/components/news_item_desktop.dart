@@ -28,7 +28,7 @@ class NewsItemDesktop extends StatelessWidget {
       child: Stack(
         alignment: Alignment.bottomCenter,
         children: [
-          CustomNetworkImage(width: 250, height: 290, image: image),
+          CustomNetworkImage(width: 290, height: 200, image: image),
           Container(
             height: 60,
             width: 290,

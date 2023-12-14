@@ -13,7 +13,7 @@ class NewsModel extends NewsEntity {
         );
 
   factory NewsModel.fromJson(Map<String, dynamic> json) {
-    final List<dynamic> jsonArticles = json['results'] as List<dynamic>;
+    final List<dynamic> jsonArticles = json['articles'] as List<dynamic>;
 
     return NewsModel(
       status: json['status'] as String,

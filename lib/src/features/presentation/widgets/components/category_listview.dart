@@ -30,7 +30,7 @@ class CategoryListview extends StatelessWidget {
             Gap(gapValue),
             CategoryItem(title: 'Sports', image: CategoryImages.sports),
             Gap(gapValue),
-            CategoryItem(title: 'Other', image: CategoryImages.general),
+            CategoryItem(title: 'General', image: CategoryImages.general),
           ],
         ),
       ),

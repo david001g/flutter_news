@@ -19,9 +19,9 @@ class ArticleModel extends ArticleEntity {
     return ArticleModel(
       title: json['title'] as String?,
       description: json['description'] as String?,
-      url: json['link'] as String?,
-      image: json['image_url'] as String?,
-      publishedAt: json['pubDate'] as String?,
+      url: json['url'] as String?,
+      image: json['urlToImage'] as String?,
+      publishedAt: json['publishedAt'] as String?,
     );
   }
 
